@@ -18,13 +18,28 @@
 % Question 1.a                                                                %
 %                                                                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+CREATE TABLE customer (
+	email VARCHAR(50) PRIMARY KEY NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	cc_no NUMERIC NOT NULL,
+	cc_type VARCHAR(50) NOT NULL
+	CHECK(cc_type == 'Visa' OR cc_type == 'American Express' OR cc_type == 'MasterCard')
+	)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                             %
 % Question 1.b                                                                %
 %                                                                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+CREATE TABLE stock (
+	name VARCHAR(50) NOT NULL,
+	symbol VARCHAR(50) PRIMARY KEY NOT NULL,
+	industry VARCHAR(50) NOT NULL,
+	sector VARCHAR(50) NOT NULL,
+	market VARCHAR(50) NOT NULL, 
+	current_price NUMERIC NOT NULL
+	CHECK(current_price > 0)
+	)
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                             %
 % Question 1.c                                                                %
@@ -44,7 +59,7 @@ CREATE TABLE portfolio
 % Question 1.d                                                                %
 %                                                                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                             %
 % Question 1.e                                                                %
